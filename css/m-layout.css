@@ -461,6 +461,15 @@ ul.m-tagcloud li.m-tag-3 { font-size: 1rem; }
 ul.m-tagcloud li.m-tag-4 { font-size: 1.25rem; }
 ul.m-tagcloud li.m-tag-5 { font-size: 1.5rem; }
 
+/* Avoid selection border being above figure border */
+article section:target figure.m-code-figure, article section:target figure.m-console-figure {
+  z-index: 1;
+}
+
+/* Spacing after every block element, but not after the last */
+article, article > header, article section { margin-bottom: 1rem; }
+article:last-child, article section:last-child { margin-bottom: 0; }
+
 /* Active sections in inflatable content affect left border of some components */
 .m-container-inflatable section:target > .m-note,
 .m-container-inflatable section:target > .m-frame,
@@ -529,3 +538,5 @@ ul.m-tagcloud li.m-tag-5 { font-size: 1.5rem; }
 .m-container-inflatable section:target section > .m-note.m-dim {
   border-left-color: var(--dim-color);
 }
+
+/* kate: indent-width 2; */
